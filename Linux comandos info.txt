@@ -1,0 +1,46 @@
+Con este comando sabremos que versión de Kernel tenemos instalada en ese momento:
+ 
+uname -r
+ 
+Para saber la arquitectura si es de 32 ó 64 bits
+ 
+uname -m
+ 
+Este comando devolverá una de estas dos posibilidades sobre la arquitectura:
+ 
+x86_64 = Arquitectura de 64 bits.
+i686 = Para arquitecturas de 32 bits.
+ 
+También valdría uname -a , pero es mas complicado de ver ya que da mas información.
+ 
+Para saber la distribución y su versión, en terminal escribimos:
+ 
+cat /etc/issue.net
+ 
+Para saber la versión que tengo y la release, en terminal escribimos:
+ 
+cat /etc/*-release
+ 
+Para saber la versión original que tengo (puede estar basado en otra distro, ejem debian), en terminal escribimos:
+ 
+cat /etc/*version
+ 
+Para saber la versión de Kernel, la arquitectura, la versión del Debian, y demás., en terminal pondremos:
+ 
+cat /proc/version
+ 
+Si sabemos cual es la distribución, y queremos averiguar la versión de la distro utilizada, podemos averiguarla cat sobre los siguientes archivos:
+ 
+Slackware: cat /etc/slackware-version
+Mandrake: cat /etc/mandrake-release
+Red Hat: cat /etc/redhat-release
+Fedora: cat /etc/fedora-release
+Debian: cat /etc/debian_release ó cat /etc/debian_version
+ 
+También tenemos un comando que nos va a dar muchos más detalles
+ 
+lsb_release -a
+ 
+Si nos sale un error es que no la tenemos instalada entonces:
+ 
+sudo apt-get install lsb

@@ -1,0 +1,35 @@
+-----------------intalar maven en centos---------------
+yum install -y maven
+
+-----------------intalar maven en ubuntu---------------
+install java commands
+------------------------------------------------------
+$add-apt-repository ppa:webupd8team/java
+$apt-get udpate
+$apt install oracle-java8-installer
+$apt install oracle-java-set-default
+
+Install Maven Commands
+-------------------------------------------------------
+cd /opt/
+$wget https://www-eu.apache.org/dist/maven/maven-3/3.6.2/binaries/apache-maven-3.6.2-bin.tar.gz  //el link de la pagina oficial
+//se descarga --> apache-maven-3.5.3-bin.tar.gz
+$sudo tar -xf apache-maven-3.5.3-bin.tar.gz  --> para descomprimir
+$sudo mv apache-maven-3.5.3 / apache-maven / --> Movemos el archivo descomprimido una nueva carpeta
+
+$sudo update-alternatives --install /usr/bin/mvn maven /opt/apache-maven/bin/mvn 1001
+
+Configurando Apache Maven Environment
+----------------------------------------------------
+$ cd /etc/profile.d/
+$ sudo gedit maven.sh
+
+################################################## #
+# Variables de entorno Apache Maven
+# MAVEN_HOME para Maven 1 - M2_HOME para Maven 2
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
+export M2_HOME=/opt/apache-maven
+export MAVEN_HOME=/opt/apache-maven
+export PATH=${M2_HOME}/bin:${PATH}
+
+

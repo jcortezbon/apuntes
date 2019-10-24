@@ -1,0 +1,6 @@
+instalar firewall
+Sudo yum install Firewalld -y
+
+Firewall-cmd –state
+
+Firewall-cmd --get-default-zone

@@ -1,0 +1,25 @@
+-------------------Installar openjdk - centos--------------------
+java-1.8.0-openjdk-headless.x86_64
+java-1.8.0-openjdk-headless.x86_64
+
+------------------Installar openjdk - ubuntu---------------------
+$apt-cache search openjdk
+openjdk-8-jre-headless //OpenJDK Java runtime, using Hotspot JIT (headless)
+
+$apt-get install openjdk-8-jre-headless
+
+Ubicacion de JAVA
+1- ejecutar:
+$whereis java  //para saber donde esta instalado y copiamos la 1era ubicacion
+
+2- luego:
+ls -l (dir 1era)
+
+3- luego
+ls -l (dir --> )
+
+4- Exportamos la variable
+export JAVA_HOME=(dir -->)  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.el8_0.x86_64/jre
+
+5- ejecutamos
+echo $JAVA_HOME //nos devuelve (dir -->)

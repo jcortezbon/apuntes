@@ -1,0 +1,69 @@
+docker images: para ver la lista de imágenes descargadas.
+docker ps: para ver la lista de contenedores en ejecución.
+docker ps -a: para ver la lista de todos los contenedores ejecutados.
+docker rm: para borrar contenedores en nuestro equipo.
+docker rmi: para borrar imagenes en nuestro equipo.
+docker search: para buscar imágenes en el Docker Hub.
+docker pull: para descargar imágenes desde Docker Hub.
+
+
+
+docker attach		:Adjunte flujos de entrada, salida y error estándar locales a un contenedor en ejecución
+docker build		:Crea una imagen desde un Dockerfile
+docker builder		:Administrar compilaciones
+docker checkpoint	:Administrar puntos de control
+docker commit		:Crear una nueva imagen a partir de los cambios de un contenedor
+docker config		:Administrar configuraciones de Docker
+docker container	:Administrar contenedores
+docker context		:Administrar contextos
+docker cp		:Copie archivos / carpetas entre un contenedor y el sistema de archivos local
+docker create		:Crea un nuevo contenedor
+docker deploy		:Implemente una nueva pila o actualice una pila existente
+docker diff		:Inspeccionar cambios en archivos o directorios en el sistema de archivos de un contenedor
+docker engine		:Administra el motor de la ventana acoplable
+docker events		:Obtenga eventos en tiempo real del servidor
+docker exec		:Ejecute un comando en un contenedor en ejecución
+docker export		:Exportar el sistema de archivos de un contenedor como un archivo tar
+docker history		:Mostrar el historial de una imagen
+docker image		:Administra imágenes
+docker images		:Lista de imágenes
+docker import		:Importe el contenido de un tarball para crear una imagen del sistema de archivos
+docker info		:Mostrar información de todo el sistema
+docker inspect		:Devuelve información de bajo nivel sobre objetos Docker
+docker kill		:Mata uno o más contenedores en funcionamiento
+docker load		:Cargar una imagen desde un archivo tar o STDIN
+docker login		:Inicie sesión en un registro de Docker
+docker logout		:Cerrar sesión en un registro de Docker
+docker logs		:Obtener los registros de un contenedor
+docker manifest		:Gestionar manifiestos de imagen de Docker y listas de manifiestos
+docker network		:Administrar redes
+docker node		:Administrar nodos de enjambre
+docker pause		:Pause todos los procesos dentro de uno o más contenedores
+docker plugin		:Administrar complementos
+docker port		:Lista de asignaciones de puertos o una asignación específica para el contenedor
+docker ps		:Lista de contenedores
+docker pull		:Extraer una imagen o un repositorio de un registro
+docker push		:Empuje una imagen o un repositorio a un registro
+docker rename		:Renombrar un contenedor
+docker restart		:Reiniciar uno o más contenedores
+docker rm		:Eliminar uno o más contenedores
+docker rmi		:Eliminar una o más imágenes
+docker run		:Ejecute un comando en un nuevo contenedor
+docker save		:Guarde una o más imágenes en un archivo tar (transmitido a STDOUT de forma predeterminada)
+docker search		:Buscar en Docker Hub imágenes
+docker secret		:Administra los secretos de Docker
+docker service		:Administrar servicios
+docker stack		:Administrar pilas de Docker
+docker start		:Iniciar uno o más contenedores detenidos
+docker stats		:Mostrar una transmisión en vivo de estadísticas de uso de recursos de contenedor (es)
+docker stop		:Detener uno o más contenedores en ejecución
+docker swarm		:Administrar enjambre
+docker system		:Administrar Docker
+docker tag		:Cree una etiqueta TARGET_IMAGE que haga referencia a SOURCE_IMAGE
+docker top		:Mostrar los procesos en ejecución de un contenedor
+docker trust		:Gestionar la confianza en las imágenes de Docker
+docker unpause		:Descomprima todos los procesos dentro de uno o más contenedores
+docker update		:Actualizar la configuración de uno o más contenedores
+docker version		:Mostrar la información de la versión de Docker
+docker volume		:Administrar volúmenes
+docker wait		:Bloquee hasta que uno o más contenedores se detengan, luego imprima sus códigos de salida

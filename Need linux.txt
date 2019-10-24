@@ -1,0 +1,2 @@
+yum install -y update
+sudo yum groupinstall -y "Development Tools"  --> herramientas para compilar centOS

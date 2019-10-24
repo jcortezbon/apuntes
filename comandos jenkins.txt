@@ -1,0 +1,9 @@
+$ps aux|grep jenkins -->ver los procesos de jenkins u el ususario jenkins
+
+$cat /etc/passwd|grep jenkins --> muestra el home por defecto de jenkins
+jenkins:x:1000:1000::/var/jenkins_home:/bin/bash
+
+-----------------ssh------------------
+descargar el ssh si no esta
+$apt-get install ssh
+

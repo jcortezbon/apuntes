@@ -1,0 +1,39 @@
+FROM		:Define una imagen base para crear nuestra imagen Dockerfile
+		from ubuntu:16.04 //utilizar imagenes creadas o del dockerhub
+
+MAINTAINER	:Hace referencia al creador de la receta
+		maintainer jcortez soporte@jcortez.com
+
+RUN		:Nos permite ejecutar comandos en la imagen base antes de ser creada
+		run apt-get update && apt-get install apache2
+
+add/copy	:Nos permite agregar o copiar archivos desde el equipo local a la imagen
+		add index.html /var/www/html
+
+expose		:Nos permite exponer por defecto un puerto para el contenedor
+		Expose 8080
+
+CMD		:Ejecutar accion por defecto al crear el contenedor, es la finalidad.
+		CMD ["/usr/sbin/apache2", "-D", "Foreground"]
+
+
+
+-------------------------centos-jdk-maven-ssh--------------------------
+FROM centos
+
+LABEL version="1.0" location="Peru" type="Centos-shh-jdk-1.8"
+MAINTAINER José Cortez
+
+RUN yum -y update
+RUN yum install -y java-1.8.0-openjdk-headless.x86_64
+RUN yum install -y maven
+RUN yum install -y openssh-server
+RUN ssh-keygen -A
+
+ADD ./sshd_config /etc/sshd/sshd_config
+
+RUN echo root:Password | chpasswd
+
+COPY ./DevObs/simple-app ~/app
+
+CMD /usr/sbin/sshd -D

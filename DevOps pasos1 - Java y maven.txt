@@ -1,0 +1,36 @@
+Instalar java 8 - jdk 1.8 /----- 
+Instalar maven - ver video (descargar, agregar variables de entorno, etc) /---- sudo apt install maven
+
+-------------Verificar instalacion-----------
+#java -version
+#mvn -v
+-------------Utilizar Maven-----------
+1) Creamos una carpera, entramos y ejecutamos el sgt. comando:
+#mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
+
+	mvn archetype:generate --> comando para crear un nuevo proyecto
+
+	DgroupId --> Estructura que va a tener tu proyecto y la va a defirenciar de otros proyectos
+	como buena practica se usa el dominio inverso Ejm: com.mycompany.app
+
+	DartifactId  --> Es el nombre del compilado o de tu proyecto ejm: my-app (es un jar o tmb un war)
+
+	DarchetypeArtifactId --> Arquitectura de tu proyecto ejm:
+		maven-archetype-quickstart --> estructura basica de proyecto simple
+		maven-archetype-webapp --> estructura basica de proyecto web
+
+	DinteractiveMode=false --> Crea el proyecto por defecto (si no lo colocas te preguntara las opciones para configurar)
+
+2) Luego de crear la estructura, entramos a la carpeta generada y ejecutar
+#mvn compile   --> genera un compilado y estara dentro de la carpeta del proyecto en la carpeta Target
+#mvn package  --> .Jar (empaqueta nuestro proyecto, compila y genera el .Jar (esta en Target)
+
+3) Ejecutar nuestro java: Vas a la targeta target y ejecutas
+java -cp ""nombre de nuestro jar" "donde se encuentra la clase con metodo main"
+	ver ruta main-java-com-cortez-app (nombre del .java)
+#java -cp simple-app-1.0-snapshot.jar com.cortez.app.App
+
+4)Limpiar Target (Nos ubicamos antes del target)
+#mvn clean
+
+

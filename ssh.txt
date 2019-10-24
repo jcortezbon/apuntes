@@ -1,0 +1,38 @@
+-----Instalar open SSH-------
+sudo yum install openssh-server
+ssh-keygen --> genera una llave publica y privada
+
+-------Configuracion--------
+$ cd ~/.ssh  //nos ubicamos dentro 
+
+$ ssh-keygen -t rsa -f for_jenkins_key  	// Ejecutamos keygen... nombre del archivo-->"for_jenkins_key"
+
+$ touch authorized_keys  			// Creamos el archivo authorized_keys  
+
+
+$ cat for_jenkins_key.pub >> authorized_keys   //pasamos cuestra llave publica al archivo authorized_keys  
+
+//El archivo for_jenkins_key --> llave privada copiamos su contenido y lo guardamos en un archivo en el caso de conectarnos por putty, d elo contrario agregarlos al host(cliente o app(jenkins --ssh agent)) que se conectara con este host remoto
+
+
+
+-----configurar ssh-------
+vi /etc/ssh/sshd_config
+
+//para ambientes de desarrollo, hogar, universidades se recomienda
+X11Forwarding yes
+AllowAgentForwarding yes
+PermitRootLogin yes
+
+-------------Cambiar puerto sshd sin root-------------------
+//si no puedes acceder al root 
+semanage port -a -t ssh_port_t -p tcp <port>
+//desactiva el firewalld y reinicia sshd
+//o activa el firewall pero agrega el puerto agregado:
+firewall-cmd --zone=public --add-port=<port>/tcp --permanent
+
+Reiniciar servicio ssh
+$ systemctl start sshd.service
+# /etc/init.d/sshd restart
+# service sshd restart
+$ sudo systemctl restart sshd
