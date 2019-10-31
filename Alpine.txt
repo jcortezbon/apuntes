@@ -1,0 +1,13 @@
+--------------------------------actualizar----------------------------------
+
+apk update
+apk add --no-cache curl tar bash procps
+
+
+--------------instalar paquete de sombra para tener usermod y groupmod--------------------
+
+apk --no-cache add shadow && \
+    usermod -u 2500 elasticsearch && \  * es para elastic
+    groupmod -g 2500 elasticsearch      *esto es solo para el caso de elastic
+
+-------------------------------------------------------------------------------------------

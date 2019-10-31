@@ -16,24 +16,3 @@ expose		:Nos permite exponer por defecto un puerto para el contenedor
 CMD		:Ejecutar accion por defecto al crear el contenedor, es la finalidad.
 		CMD ["/usr/sbin/apache2", "-D", "Foreground"]
 
-
-
--------------------------centos-jdk-maven-ssh--------------------------
-FROM centos
-
-LABEL version="1.0" location="Peru" type="Centos-shh-jdk-1.8"
-MAINTAINER José Cortez
-
-RUN yum -y update
-RUN yum install -y java-1.8.0-openjdk-headless.x86_64
-RUN yum install -y maven
-RUN yum install -y openssh-server
-RUN ssh-keygen -A
-
-ADD ./sshd_config /etc/sshd/sshd_config
-
-RUN echo root:Password | chpasswd
-
-COPY ./DevObs/simple-app ~/app
-
-CMD /usr/sbin/sshd -D

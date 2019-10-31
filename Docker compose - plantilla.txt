@@ -1,0 +1,25 @@
+version: '3'
+services:
+	jenkins:
+		container_name: jenkins
+	iamge: <nombre_image>
+	ports:
+		-"8080:8080"
+	volumes:
+		-$pwd/jenkins_home:/var/jenkins_home
+	networks:
+		-net
+networks:
+  net:
+
+
+
+-------------------------------------------------------------------------------------
+Acabo de tener el mismo problema. Descubrí que, por alguna razón, mi usuario no fue agregado al grupo de seguridad de Docker , a su vez no me permitió el permiso en el socket Unix de Docker y me dio ERROR: No se pudo conectar con Docker Daemon en http + docker: // localunixsocket - ¿es correr .
+
+Agregar el grupo de acopladores a mi usuario actual, luego cerrar sesión y volver a ingresar, me arregló todo:
+sudo usermod -aG docker $USER
+
+sudo usermod -aG docker $USER
+sudo chmod 755 -R .
+Restart your computer.

@@ -1,5 +1,0 @@
-
-$systemctl status docker
-$systemctl start docker
-$systemctl stop docker
-$docker run --name "nombre" -it nombreimagen
