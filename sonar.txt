@@ -1,0 +1,6 @@
+-------------solucion al error 72-----------------
+//insuficiente memoria virtual--- ejecutar el sgt. comando
+$ sysctl -w vm.max_map_count=262144
+
+---------------Token Usuario jenkins - sonar --------------
+e2ca5d404ffb932995dd1405b42d7bd5b6eec84f

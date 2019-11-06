@@ -1,7 +1,7 @@
 --------------------------------actualizar----------------------------------
 
 apk update
-apk add --no-cache curl tar bash procps
+apk add --no-cache curl tar bash proc
 
 
 --------------instalar paquete de sombra para tener usermod y groupmod--------------------
@@ -11,3 +11,48 @@ apk --no-cache add shadow && \
     groupmod -g 2500 elasticsearch      *esto es solo para el caso de elastic
 
 -------------------------------------------------------------------------------------------
+------------------openjdk-------------------------
+apk add --no-cache openjdk8
+
+export JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk/jre
+
+--------------------------jdk8--------------------
+jdk1.8.0_231
+
+mkdir -p /opt/java 
+cd /opt/java 
+sudo tar -zxvf XXX-XXX-linux-x64.tar.gz
+
+//Anote el directorio, por ejemplo /opt/java/jdk1.8.0_121, cree un enlace de símbolo como la versión actual:
+ln -s /opt/java/jdk1.8.0_121 / opt / java / current
+
+//Cree un archivo en /etc/profile.d/java.sh :
+export JAVA_HOME=/opt/java/current
+export PATH=$PATH:$JAVA_HOME/bin
+
+Ejecute este script o reinicie su shell:
+sh /etc/profile.d/java.sh
+
+//Ahora necesitamos administrar grsec con paxctl, use este comando para verificar si está instalado:
+which paxctl
+
+//If nothing comes up install it:
+apk add paxctl
+
+//Now in your /opt/java/XXX/bin folder let it execute:
+paxctl -c java
+paxctl -m java
+
+//If you have the JDK, you need to do the same to javac:
+paxctl -c javac
+paxctl -m javac
+
+//Puede hacer esto para cualquier otro binario que necesite usar.
+//NOTA: Leí en línea que algunas personas requirieron el uso de este comando para que funcione (y puede ser una mejor alternativa):
+setfattr -n user.pax.flags -v "mr" java
+setfattr -n user.pax.flags -v "mr" javac
+
+----------------------- MAVEN------------------
+
+
+

@@ -67,3 +67,10 @@ docker update		:Actualizar la configuración de uno o más contenedores
 docker version		:Mostrar la información de la versión de Docker
 docker volume		:Administrar volúmenes
 docker wait		:Bloquee hasta que uno o más contenedores se detengan, luego imprima sus códigos de salida
+
+----------------Docker CP ------------------------
+//del contenedor al host
+$docker cp CONTAINER_NAME:PATH_IN_CONTAINER PATH_IN_HOST
+
+//de host a contenedor
+$docker cp PATH_IN_HOST CONTAINER_NAME:PATH_IN_CONTAINER
