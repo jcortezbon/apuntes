@@ -1,0 +1,39 @@
+>>>>Ambientes: des-cal-cnt-prd
+des (todas stage)
+cal, cnt,prd (gitlap, artifactory, apenshift)
+
+>>>>Stage: gitlab | sonarqube | artifactory | openshift 
+
+****Archivos de variables (directorio --> devops/deploy)
+	des-vars.yaml 
+	cal-vars.yaml 
+	cnt-vars.yaml
+	prd-vars.yaml
+Verificar en cada archivo.yaml las rutas
+	health_path: RUTA-BOOTSTRAP/actuator/health
+	ingress_map: 
+	path: RUTA-BOOTSTRAP/ (importante colocar el "/" al final)
+
+
+****Archivos de pipelines (directorio --> devops/jenkins)
+	Jenkins-delivery-des-k8s-pipeline.groovy
+	Jenkins-delivery-cal-k8s-pipeline.groovy
+	Jenkins-delivery-cnt-k8s-pipeline.groovy
+	Jenkins-delivery-prd-k8s-pipeline.groovy
+En estos carchivos tengo q verificar 2 cosas:
+1-Proyectos:
+	MBBK: Banca Mov.
+	MDYS: Moodys
+	SLFC: sales force
+	JRVS: APIS de negocio
+
+2-Variables de pipeline (contenido de cada pipeline)
+	project: (MBBK-MDYS-SLFC-JRVS)
+	deploymentEnvironment: ambiente al q corresponde (des-cal-cnt-prd)
+
+*** Credenciales:
+	-[proy-env]-artifactory
+	-[proy-env]-ocp-registry-credentials
+	-[proy-env]-token-gitlab
+	-[proy-env]-gitlab
+
