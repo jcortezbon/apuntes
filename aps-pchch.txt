@@ -12,7 +12,8 @@ cal, cnt,prd (gitlap, artifactory, apenshift)
 Verificar en cada archivo.yaml las rutas
 	health_path: RUTA-BOOTSTRAP/actuator/health
 	ingress_map: 
-	path: RUTA-BOOTSTRAP/ (importante colocar el "/" al final)
+	path: RUTA-BOOTSTRAP
+RUTA-BOOTSTRAP --> (src/main/sourse)
 
 
 ****Archivos de pipelines (directorio --> devops/jenkins)
